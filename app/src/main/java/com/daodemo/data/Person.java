@@ -12,23 +12,19 @@ import org.dao.annotation.Table;
  * Version：1.0
  */
 
-@Table
+@Table // 表示是一张表
 public class Person {
 
-    @Column
-    public String name;
+    @Column// 表示是表的列
+    public String name;// 访问符可以为私有
+
     @Column
     public int age;
-
-    public Person(String name, int age, String sex) {
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
-    }
 
     @Column
     public String sex;
 
+    // 一定要有一个空的构造器 私有也可以
     public Person() {
     }
 
@@ -37,6 +33,12 @@ public class Person {
         this.age = age;
     }
 
+
+    public Person(String name, int age, String sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
     @Override
     public String toString() {
         return "Person{" +
